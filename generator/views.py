@@ -8,10 +8,18 @@ def home(request):
 
 
 def password(request):
-    charactors = list('abcdefghijkalmnopqrstuvwxyz')
-    length = 10
+    characters = list('abcdefghijkalmnopqrstuvwxyz')
+    
+    if request.GET.get('uppercase'):
+        characters.extend(list('ABCDEFGHIJKLMNOPQRSTUVWXYZ'))
+    if request.GET.get('numbers'):
+        characters.extend(list('1234567890'))
+    if request.GET.get('special'):
+        characters.extend(list('@!#$%&*'))
+
+    length = int(request.GET['length'])
     thepassword = ""
     for x in range(length):
-        thepassword += random.choice(charactors)
+        thepassword += random.choice(characters)
 
     return render(request, 'password.html',{'password':thepassword})

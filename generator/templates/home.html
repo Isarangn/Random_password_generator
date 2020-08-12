@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <title>Random Password Generator</title>
 </head>
 
 <body>
-    <h1>Welcome to Password Generator Application</h1>
-    <form action="{% url 'password' %}">
-        <select name="length">
+    <div class="container text-center">
+        <h1>Welcome to Password Generator Application</h1>
+        <form action="{% url 'password' %}">
+            <select name="length">
             <option value="6">6</option>
             <option value="7">7</option>
             <option value="8">8</option>
@@ -22,20 +25,21 @@
             <option value="14">14</option>
             <option value="15">15</option>
         </select>
-        <br>
-        <br>
-        <input type="checkbox" name="upercase">Uppercase
-        <br>
-        <br>
-        <input type="checkbox" name="numbers">Numbers
-        <br>
-        <br>
-        <input type="checkbox" name="special">Special Charactors
-        <br>
-        <br>
-        <input type="submit" value="Generate Password">
-        <br>
-    </form>
+            <br>
+            <br>
+            <input type="checkbox" name="uppercase">Uppercase
+            <br>
+            <br>
+            <input type="checkbox" name="numbers">Numbers
+            <br>
+            <br>
+            <input type="checkbox" name="special">Special Characters
+            <br>
+            <br>
+            <input type="submit" value="Generate Password" class="btn btn-primary btn-sm">
+            <br>
+        </form>
+    </div>
 
 </body>
 
